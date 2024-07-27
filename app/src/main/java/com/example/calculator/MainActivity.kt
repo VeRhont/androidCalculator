@@ -63,10 +63,14 @@ class MainActivity : AppCompatActivity() {
 
         buttonOperations.forEach { operation ->
             operation.key.setOnClickListener {
-                calculator.addElement(currentNumber.toDouble())
-                calculator.addOperation(operation.value)
-                currentNumber = "0"
-                binding.tvResult.text = currentNumber
+                if ((operation.value != "/") || (currentNumber != "0")) {
+                    calculator.addElement(currentNumber.toDouble())
+                    calculator.addOperation(operation.value)
+                    currentNumber = "0"
+                    binding.tvResult.text = currentNumber
+                } else {
+                    Toast.makeText(this, "Zero division", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

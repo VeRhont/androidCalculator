@@ -38,15 +38,19 @@ class Calculator {
                 "+" -> {
                     result + number1
                 }
+
                 "-" -> {
                     result - number1
                 }
+
                 "*" -> {
                     result * number1
                 }
+
                 "/" -> {
                     result / number1
                 }
+
                 else -> {
                     0.0
                 }
